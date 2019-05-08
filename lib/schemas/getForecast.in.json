@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "lat": {
+            "required": true,
+            "type": "number"
+        },
+        "lng": {
+            "required": true,
+            "type": "number"
+        }
+    }
+}

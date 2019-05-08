@@ -1,0 +1,15 @@
+{
+    "name": "stormglass-io-connector",
+    "version": "1.0.1",
+    "description": "Global marine weather data from multiple sources in one single API with hourly resolution. Get your API key by visiting the Storm Glass web site.",
+    "main": "component.json",
+    "dependencies": {
+        "elasticio-node": "0.0.9",
+        "elasticio-sailor-nodejs": "^2.2.1",
+        "swagger-client": "^3.8.22"
+    },
+    "author": {
+        "name": "Deutsche Telekom AG"
+    },
+    "license": "Apache-2.0"
+}

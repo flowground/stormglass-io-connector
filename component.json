@@ -1,0 +1,55 @@
+{
+    "title": "Storm Glass Marine Weather",
+    "description": "Global marine weather data from multiple sources in one single API with hourly resolution. Get your API key by visiting the Storm Glass web site.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/stormglass.io/1.0.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.stormglass.io/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "authenticationToken": {
+                "label": "Authentication-Token (authenticationToken)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getForecast": {
+            "main": "./lib/actions/getForecast.js",
+            "title": "Get hourly forecasts by coordinates",
+            "description": "Get forecast info for the given coordinates. For every hour and property, you will get a list of weather sources and their values.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getForecast.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
